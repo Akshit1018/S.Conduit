@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-background: #0b0b0c;
+  --color-foreground: #eceae4;
+  --color-card: #131314;
+  --color-elevated: #1a1a1c;
+  --color-muted: #8c8a83;
+  --color-muted-foreground: #8c8a83;
+  --color-subtle: #5e5d58;
+  --color-border: #2a2a2c;
+  --color-ring: #c8c2b4;
+  --color-primary: #d8d2c4;
+  --color-primary-foreground: #121110;
+  --color-secondary: #1e1e20;
+  --color-secondary-foreground: #eceae4;
+  --color-destructive: #c45c4a;
+  --color-ok: #6f9b72;
+  --color-warn: #c4a15a;
+  --color-info: #7a8ea3;
+  --color-source-github: #c8c2b4;
+  --color-source-linear: #8aa0b8;
+  --color-source-notion: #b8b0a0;
+  --color-source-hubspot: #b8896a;
+  --color-source-aegis: #9a7a7a;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, monospace;
+
+  --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.07);
+  --shadow-border-hover: 0 0 0 1px rgba(255, 255, 255, 0.13);
+  --shadow-lift: 0 18px 40px -24px rgba(0, 0, 0, 0.65);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-background);
+    color: var(--color-foreground);
+    min-height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 30%, transparent);
+    color: var(--color-foreground);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes log-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 420ms var(--ease-out) both;
+}
+
+.stagger-1 {
+  animation-delay: 40ms;
+}
+.stagger-2 {
+  animation-delay: 90ms;
+}
+.stagger-3 {
+  animation-delay: 140ms;
+}
+.stagger-4 {
+  animation-delay: 190ms;
+}
+.stagger-5 {
+  animation-delay: 240ms;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
