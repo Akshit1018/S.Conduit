@@ -1,37 +1,44 @@
-# S.Conduit
+# Conduit — Open Source MCP Control Plane
 
-**Simple name:** Conduit
+**Conduit** is an open-source **MCP control plane** demo. One desk to watch tool calls across GitHub, Linear, Notion, HubSpot, and a security source — with human-in-the-loop writes.
 
-MCP control-plane demo (KitePay sandbox).
+[![License: MIT](https://img.shields.io/badge/License-MIT-indigo.svg)](LICENSE)
 
-This is a Grok App Builder project. The sandbox npm name was `app-builder-workspace`. On GitHub it is **S.Conduit** (private).
+## Features
 
-## Run on this Mac
+- Live-style tool-call log (`tools/call` → cited content)
+- Source cards for GitHub, Linear, Notion, HubSpot, Aegis
+- HITL (human-in-the-loop) write path
+- Landing + authenticated app shell
+- Useful as a **Model Context Protocol** teaching app
 
-Need **Node.js 22** and **npm**. Postgres is not required (uses PGLite in the browser/process).
+## Who it is for
+
+- Teams wiring **MCP servers** into one cockpit
+- Platform engineers building an **agent control plane**
+- Security / RevOps demos
+
+## Quick start
 
 ```bash
-cd "/Users/akshitpareta/Documents/S-projects/S.Conduit"
+git clone https://github.com/Akshit1018/S.Conduit.git
+cd S.Conduit
 npm install
-npm run dev
-```
-
-Open http://127.0.0.1:8080
-
-To skip Grok login in local preview:
-
-```bash
 VITE_AUTH_ENABLED=false npm run dev
 ```
 
-Optional AI (only if this app calls Grok): set `XAI_API_KEY`.
+Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
-## Scripts
+Integrations in this repo are a **sandbox**. Point them at real credentials only in your own fork.
 
-- `npm run dev` — Vite on port 8080
-- `npm run build` — production build + DB migrate (skipped without DATABASE_URL)
-- `npm run typecheck`
+## Tech stack
 
-## Notes
+React 19 · TanStack Start · Vite · Tailwind · MCP
 
-Do not commit `.env`, `node_modules`, or `.grok/`.
+## License
+
+[MIT](LICENSE)
+
+## Keywords
+
+MCP control plane, Model Context Protocol dashboard, agent tool router, HITL agent writes, open source MCP demo
